@@ -1,0 +1,37 @@
+
+name: SmartBank Multi Job Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    name: Build Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Build Message
+        run: echo "Building SmartBank Application"
+
+      - name: Display Java Learning Environment
+        run: echo "Java 17 + Maven"
+
+      - name: Build Completed
+        run: echo "Build Job Completed Successfully"
+
+  test:
+    name: Test Job
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Test Message
+        run: echo "Executing SmartBank Test Cases"
+
+      - name: Test Completed
+        run: echo "Test Job Completed Successfully"
