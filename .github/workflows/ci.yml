@@ -3,14 +3,24 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: -main
+    types:
+      - opened
+      - synchronize
+      - reopened
+  workflow_dispatch:
+
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
       - name: Welcome Message
-        run: echo "Welcome to the SmartBank First Workflow!"
+        run: echo "Welcome to SmartBank CI/CD!"
       - name: Display Current Date and Time
         run: date
+      - name: Display Trigger Information
+        run: echo "SmartBank workflow triggered successfully"
       - name: Display Project Information
         run: |
           echo "Project Name: SmartBank"
