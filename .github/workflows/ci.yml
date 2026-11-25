@@ -1,0 +1,19 @@
+name: SmartBank First Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome Message
+        run: echo "Welcome to the SmartBank First Workflow!"
+      - name: Display Current Date and Time
+        run: date
+      - name: Display Project Information
+        run: |
+          echo "Project Name: SmartBank"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Learning GitHub Actions with Java 17 and Maven"
